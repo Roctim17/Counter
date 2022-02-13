@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+    <main>
+        <div class="container text-center p-5 border-rounded ">
+            <H1>Counter</H1>
+            <div class="row">
+                <div class="col-md-12 ">
+                    <h1 id="count" class="p-5">0</h1>
+                    <button onclick="plus()" id="count-plus" class="bg-success rounded-3"
+                        style="width: 50px; height: 50px;">+</button>
+                    <button onclick="minas()" id="count-minas" class="bg-danger rounded-3"
+                        style="width: 50px; height: 50px;">-</button>
+                    <br>
+                    <button onclick="clear()" id="count-clear" class="bg-info rounded-3 m-3"
+                        style="width: 100px; height: 50px;">Clear</button>
+
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>
+        let count = 0;
+        function plus() {
+            count++;
+            control('count');
+        }
+
+        function minas() {
+            if (count > 0) {
+                count--;
+                control('count');
+            }
+
+        }
+
+        function clear() {
+            count++;
+            control('count');
+        }
+
+        function control(id) {
+            document.getElementById(id).innerText = count;
+        }
+    </script>
+
+</body>
+
+</html>
