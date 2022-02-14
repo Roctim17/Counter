@@ -21,6 +21,7 @@
                         style="width: 50px; height: 50px;">+</button>
                     <button onclick="minas()" id="count-minas" class="bg-danger rounded-3"
                         style="width: 50px; height: 50px;">-</button>
+
                     <br>
                     <button onclick="clear()" id="count-clear" class="bg-info rounded-3 m-3"
                         style="width: 100px; height: 50px;">Clear</button>
@@ -45,13 +46,17 @@
         }
 
         function clear() {
-            count++;
+            count = 0;
             control('count');
         }
 
         function control(id) {
             document.getElementById(id).innerText = count;
         }
+        document.getElementById('count-clear').addEventListener("click", function () {
+            count = 0;
+            document.getElementById('count').innerText = count;
+        })
     </script>
 
 </body>
